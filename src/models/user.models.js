@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema(
             unique: true,
             lowercase: true,
             trim: true,
-            indexe: true
+            index: true
         },
         email: {
             type: String,
@@ -79,7 +79,6 @@ userSchema.methods.isPasswordCorrect = async function (password) {
 }
 
 userSchema.methods.generateAccessToken = function () {
-
     //short lived access token
     return jwt.sign(
         {
